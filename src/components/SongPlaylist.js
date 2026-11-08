@@ -9,9 +9,7 @@ function SongPlaylist() {
   const songPlaylist = [];
 
   const handleSongAdd = (song) => {
-    const action = addSong(song); // song is the value of the payload property on the action object
-    console.log(action);
-    dispatch(action);
+    dispatch(addSong(song)); // song is the value of the payload property on the action object
     // To Do:
     // Add song to list of songs
   };
