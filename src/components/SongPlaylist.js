@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { createRandomSong } from "../data";
-import { addSong } from "../store";
+import { addSong, removeSong } from "../store";
 
 function SongPlaylist() {
   const dispatch = useDispatch(); // This React-Redux hook makes use of the Context system to reach up the component hierarchy to access the dispatch function from the Redux store
@@ -18,6 +18,7 @@ function SongPlaylist() {
   const handleSongRemove = (song) => {
     // To Do:
     // Remove song from list of songs
+    dispatch(removeSong(song));
   };
 
   const renderedSongs = songPlaylist.map((song) => {
