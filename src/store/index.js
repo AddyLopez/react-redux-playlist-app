@@ -4,6 +4,7 @@ const songsSlice = createSlice({
   name: "song",
   initialState: [],
   reducers: {
+    // state parameter represents the song state, NOT the entire app's state
     addSong(state, action) {
       state.push(action.payload);
     },
@@ -22,10 +23,7 @@ const store = configureStore({
 const startingState = store.getState();
 console.log(startingState);
 
-store.dispatch({
-  type: "song/addSong",
-  payload: "New Song!!!",
-});
+store.dispatch(songsSlice.actions.addSong("New Song")); // actions represents action creators
 
 const nextState = store.getState();
 console.log(nextState);
