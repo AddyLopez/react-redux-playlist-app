@@ -20,4 +20,6 @@ const store = configureStore({
   },
 });
 
+// console.log(songsSlice.actions.addSong());
 export { store };
+export const { addSong } = songsSlice.actions;
