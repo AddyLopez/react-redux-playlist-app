@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createRandomSong } from "../data";
 import { addSong } from "../store";
 
@@ -6,7 +6,9 @@ function SongPlaylist() {
   const dispatch = useDispatch(); // This React-Redux hook makes use of the Context system to reach up the component hierarchy to access the dispatch function from the Redux store
   // To Do:
   // Get list of songs
-  const songPlaylist = [];
+  const songPlaylist = useSelector((state) => {
+    return state.songs; // state represents full state from store, but only the songs slice of state is needed here
+  });
 
   const handleSongAdd = (song) => {
     dispatch(addSong(song)); // song is the value of the payload property on the action object
