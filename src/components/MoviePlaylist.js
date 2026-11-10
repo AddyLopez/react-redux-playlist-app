@@ -9,10 +9,8 @@ function MoviePlaylist() {
   const moviePlaylist = [];
 
   const handleMovieAdd = (movie) => {
-    // To Do:
     // Add movie to list of movies
-    const action = addMovie(movie);
-    dispatch(action);
+    dispatch(addMovie(movie));
   };
   const handleMovieRemove = (movie) => {
     // To Do:
