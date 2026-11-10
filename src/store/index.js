@@ -1,5 +1,18 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
+const moviesSlice = createSlice({
+  name: "movie",
+  initialState: [],
+  reducers: {
+    addMovie(state, action) {
+      //
+    },
+    removeMovie(state, action) {
+      //
+    },
+  },
+});
+
 const songsSlice = createSlice({
   name: "song",
   initialState: [],
