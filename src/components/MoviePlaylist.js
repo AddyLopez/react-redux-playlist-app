@@ -1,6 +1,9 @@
+import { useDispatch } from "react-redux";
 import { createRandomMovie } from "../data";
+import { addMovie } from "../store";
 
 function MoviePlaylist() {
+  const dispatch = useDispatch();
   // To Do:
   // Get list of movies
   const moviePlaylist = [];
@@ -8,6 +11,8 @@ function MoviePlaylist() {
   const handleMovieAdd = (movie) => {
     // To Do:
     // Add movie to list of movies
+    const action = addMovie(movie);
+    dispatch(action);
   };
   const handleMovieRemove = (movie) => {
     // To Do:
