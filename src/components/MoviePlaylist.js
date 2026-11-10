@@ -1,12 +1,13 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createRandomMovie } from "../data";
 import { addMovie } from "../store";
 
 function MoviePlaylist() {
   const dispatch = useDispatch();
-  // To Do:
   // Get list of movies
-  const moviePlaylist = [];
+  const moviePlaylist = useSelector((state) => {
+    return state.movies; // only the movies slice is needed
+  }); // useSelector is called with entire state object from store
 
   const handleMovieAdd = (movie) => {
     // Add movie to list of movies
