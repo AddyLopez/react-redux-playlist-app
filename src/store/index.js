@@ -33,8 +33,11 @@ const songsSlice = createSlice({
 const store = configureStore({
   reducer: {
     songs: songsSlice.reducer,
+    movies: moviesSlice.reducer,
   },
 });
+
+console.log(store.getState());
 
 // console.log(songsSlice.actions.addSong());
 export { store };
