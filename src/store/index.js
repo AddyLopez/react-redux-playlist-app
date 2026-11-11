@@ -4,11 +4,15 @@ const moviesSlice = createSlice({
   name: "movie",
   initialState: [],
   reducers: {
+    // state parameter represents the movie state, NOT the entire app's state
     addMovie(state, action) {
       state.push(action.payload);
     },
     removeMovie(state, action) {
-      //
+      // action.payload should be a string. It represents the movie to remove
+      // Redux Toolkit uses Immer, so mutating state here is permitted
+      const index = state.indexOf(action.payload); // get index of movie to remove (represented by action.payload) from state array
+      state.slice(index, 1); // remove 1 element at index from state array
     },
   },
 });
@@ -42,4 +46,4 @@ const store = configureStore({
 // console.log(songsSlice.actions.addSong());
 export { store };
 export const { addSong, removeSong } = songsSlice.actions;
-export const { addMovie } = moviesSlice.actions;
+export const { addMovie, removeMovie } = moviesSlice.actions;
