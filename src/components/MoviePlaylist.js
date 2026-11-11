@@ -15,8 +15,7 @@ function MoviePlaylist() {
   };
   const handleMovieRemove = (movie) => {
     // Remove movie from list of movies
-    const action = removeMovie(movie);
-    dispatch(action);
+    dispatch(removeMovie(movie));
   };
 
   const renderedMovies = moviePlaylist.map((movie) => {
