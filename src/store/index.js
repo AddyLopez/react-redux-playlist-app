@@ -31,6 +31,11 @@ const songsSlice = createSlice({
       const index = state.indexOf(action.payload); // get index of song to remove (represented by action.payload) from state array
       state.splice(index, 1); // remove 1 element at index from state array
     },
+    reset(state, action) {
+      // goal: reset both playlists
+      // a problem: Immer detects mutations to state but would not detect a simple reassignment of state to an empty array.
+      return []; // solution: Redux Toolkit interprets the empty array as state.
+    },
   },
 });
 
