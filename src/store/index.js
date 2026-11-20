@@ -12,7 +12,7 @@ const moviesSlice = createSlice({
       // action.payload should be a string. It represents the movie to remove
       // Redux Toolkit uses Immer, so mutating state here is permitted
       const index = state.indexOf(action.payload); // get index of movie to remove (represented by action.payload) from state array
-      state.splice(index, 1); // remove 1 element at index from state array
+      state.splice(index, 1); // remove 1 element at index from state array (note that it is splice not slice)
     },
   },
 });
@@ -29,7 +29,7 @@ const songsSlice = createSlice({
       // action.payload should be a string. It represents the song to remove
       // Redux Toolkit uses Immer, so mutating state here is permitted
       const index = state.indexOf(action.payload); // get index of song to remove (represented by action.payload) from state array
-      state.splice(index, 1); // remove 1 element at index from state array
+      state.splice(index, 1); // remove 1 element at index from state array (note that it is splice not slice)
     },
     reset(state, action) {
       // goal: reset both playlists
