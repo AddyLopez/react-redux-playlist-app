@@ -17,7 +17,8 @@ const moviesSlice = createSlice({
   },
   extraReducers(builder) {
     // when slice is created by Redux Toolkit, this extraReducers function will be called automatically. builder is how you watch for extra action types.
-    builder.addCase("song/reset", (state, action) => {
+    // first argument below refactors the action creator to avert typos
+    builder.addCase(songsSlice.actions.reset.toString(), (state, action) => {
       return []; // state is an empty array. Immer expects the state object to be mutated in particular ways, so simply reassigning state to an empty array wouldn't work.
     });
   },
