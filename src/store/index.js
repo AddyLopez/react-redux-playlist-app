@@ -15,6 +15,12 @@ const moviesSlice = createSlice({
       state.splice(index, 1); // remove 1 element at index from state array (note that it is splice not slice)
     },
   },
+  extraReducers(builder) {
+    // when slice is created by Redux Toolkit, this extraReducers function will be called automatically. builder is how you watch for extra action types.
+    builder.addCase("song/reset", (state, action) => {
+      return []; // state is an empty array. Immer expects the state object to be mutated in particular ways, so simply reassigning state to an empty array wouldn't work.
+    });
+  },
 });
 
 const songsSlice = createSlice({
